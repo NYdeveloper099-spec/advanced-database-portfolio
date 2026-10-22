@@ -1,5 +1,11 @@
 # Portfolio 2: Query Processing and Optimisation
 
+## Project Documentation
+
+- [SQL Queries and Indexes](queries.sql)
+- [Execution Plans and Optimisation Analysis](execution-plans.md)
+
+
 ## 1. Introduction
 
 This portfolio investigates how PostgreSQL processes SQL queries and how indexes can improve data retrieval. The University Student Result Management System from Portfolio 1 will be used as the case study.
