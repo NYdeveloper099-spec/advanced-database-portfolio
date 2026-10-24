@@ -20,8 +20,13 @@ This screenshot shows the query filtering documents where at least one embedded 
 - Collection: `students`
 - Tool: MongoDB Atlas Data Explorer
 
+## 3. Department Query
 
-## 3. Projection Query
+![Department query result](department-query.png)
+
+This screenshot documents a query on the `students` collection using a department-related filter. It provides evidence of filtering student records based on the department field.
+
+## 4. Projection Query
 
 ![Projection query](projection-query.png)
 
