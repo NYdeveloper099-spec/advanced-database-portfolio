@@ -32,3 +32,10 @@ This screenshot documents a query on the `students` collection using a departmen
 
 This test used MongoDB Data Explorer's Project option to return selected fields from the student document. The output included the student number, first name, last name, and department while excluding the `_id` field. The result demonstrates how MongoDB projection controls which fields appear in query results.
 
+## 5. Embedded Course Registration Query
+
+![Course registration query](course-registration-query.png)
+
+This screenshot shows a query filtering the `students` collection by the embedded field `registrations.course_code` with the value `CSC801`. The query returned the student document for Ada Okafor, demonstrating how MongoDB can locate student records containing a registration for a specific course.
+
+
