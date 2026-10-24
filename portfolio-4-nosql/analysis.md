@@ -84,17 +84,17 @@ In this example, the projection returns the student's number, first name, last n
 { "registrations.course_code": "CSC801" }
 ```
 
-**Status:** Prepared query; execution and results have not yet been documented.
+**Observation:** The query returned the student document for Ada Okafor (`STU001`).
 
-**Purpose:** This query is designed to find student documents containing an embedded registration with the course code `CSC801`.
+**Interpretation:** MongoDB can filter documents using a field nested inside an embedded array. The query identified the student document containing a registration with the course code `CSC801`.
 
-The query should be executed in MongoDB Atlas Data Explorer before an observed result is reported. If no document is returned, the embedded course codes should be checked to confirm whether `CSC801` exists in the sample data.
+This is useful in the University Student Result Management System because it can help identify students registered for a particular course without requiring a relational join. The screenshot of the query result is stored in the evidence folder.
 
 ## 4. Embedding Related Data
 
 The two course registrations are embedded inside the student document. This makes it possible to retrieve the student and their registrations together in one document query.
 
-Embedding can be useful when related information is frequently read together. It can reduce the need for separate queries or joins when the application commonly accesses the student and registration information as a single unit.
+Embedding can be useful when related information is frequently read together. It can reduce the need for separate queries or joins when the application commonly accesses student and registration information as a single unit.
 
 However, if registrations grow substantially, need to be updated independently, or are shared across multiple records, a separate registrations collection with references may be more appropriate.
 
@@ -112,4 +112,16 @@ Neither approach is automatically better in every situation. The most appropriat
 
 ## 6. Limitations
 
-The practical exercise used one sample student document. Student lookup, the embedded-score filter, the department filter, and projection
+The practical exercise used one sample student document. The student lookup, embedded-score filter, department filter, projection, and course registration filter were executed in MongoDB Atlas Data Explorer.
+
+The dataset is small and contains only one student document, so the exercise demonstrates query syntax and document modelling rather than performance at scale. It does not provide enough data to draw reliable conclusions about query performance, scalability, or the benefits of indexing.
+
+The queries demonstrate filtering and projection on a document and its embedded registration fields. A larger dataset and additional testing would be required to compare alternative document structures or measure performance under realistic workloads.
+
+## 7. Conclusion
+
+This portfolio demonstrated how MongoDB stores student information and embedded course registrations in a document-oriented structure. Five queries were prepared, and the practical results documented student lookup, score filtering, department filtering, projection, and filtering by an embedded course code.
+
+The exercise illustrates how a document database can retrieve related academic information stored within a student document. It also highlights the differences between MongoDB's document model and the relational model developed in earlier portfolios.
+
+The University Student Result Management System remains the case study throughout the portfolio, providing continuity between relational database design and NoSQL data modelling.
