@@ -2,59 +2,56 @@
 
 ## Case Study: University Student Result Management System
 
-### 1. Introduction
+### 1. Overview
 
-This portfolio examines how distributed and cloud database technologies can support a University Student Result Management System. The system stores student details, departments, course registrations, scores, and grades. Its users include students, lecturers, and university administrators.
+This portfolio examines how cloud database deployment, replication, availability, consistency, and scalability can support a University Student Result Management System.
 
-The system needs reliable access to student records and examination results. A cloud database deployment can help support availability, resilience, and access to data while reducing the need for the university to manage all database infrastructure itself.
+The system stores student details, course registrations, scores, and grades. MongoDB Atlas was used to explore a cloud-hosted database deployment.
 
-### 2. Cloud Database Environment
+### 2. Environment
 
-The practical environment for this exercise is MongoDB Atlas. The database used in the case study is `university_results`, and the existing collection is `students`.
-
-The Atlas cluster overview showed the following configuration:
-
-- **Cluster name:** `Cluster0`
-- **Deployment type:** Replica Set — 3 nodes
+- **Platform:** MongoDB Atlas
+- **Cluster:** `Cluster0`
+- **Deployment type displayed:** Replica Set — 3 nodes
 - **Cloud provider and region:** AWS / Cape Town (`af-south-1`)
 - **Database:** `university_results`
 - **Collection:** `students`
 
-These details were observed in the MongoDB Atlas cluster overview. The configuration screenshot is intended to serve as evidence of the cloud deployment and the displayed replica-set topology.
+### 3. Practical Work
 
-### 3. Replication
+The practical exercise included:
 
-Replication maintains copies of database data across members of a replica set. In a MongoDB replica set, one member normally acts as the primary and accepts writes, while secondary members replicate changes from the primary.
+1. Inspecting the existing MongoDB Atlas cluster overview.
+2. Recording the displayed replica-set configuration.
+3. Querying the `students` collection using the student number `STU001`.
+4. Verifying that the query returned the existing student record.
 
-For the University Student Result Management System, replication can help the university maintain access to student and result data if a database member becomes unavailable. MongoDB replica sets can elect a new primary when the current primary becomes unavailable, provided the necessary election and majority conditions are met.
+The student lookup succeeded. The exercise did not deliberately interrupt a node or test failover, backup restoration, or sharding.
 
-The Atlas overview identifies the deployment as a three-node replica set. This confirms the displayed deployment type, but this exercise does not claim to have deliberately stopped a node or tested a failover.
+### 4. Project Documentation
 
-### 4. Availability and Consistency
+- [Distributed and Cloud Database Analysis](distributed-cloud-analysis.md)
+- [Evidence Documentation](evidence/README.md)
+- [Cluster Replica Set Screenshot](evidence/cluster-replica-set.png)
+- [Student Record Verification Screenshot](evidence/student-record-verification.png)
 
-Availability is important because students and university staff may need to retrieve results during registration and examination periods. A replica set can improve resilience to individual member failures, although availability is not guaranteed under every failure or network condition.
+### 5. Key Findings
 
-Consistency concerns whether clients observe the expected database values and ordering of changes. MongoDB provides read and write concern settings that influence the consistency and durability guarantees of operations. The appropriate settings depend on the university's requirements, particularly when recording final examination scores.
+The Atlas overview provided practical evidence of a cloud deployment identified as a three-node replica set. The successful student lookup demonstrated that the existing student record was accessible through Atlas Data Explorer.
 
-For important result updates, the university should select suitable write concern and read concern settings, validate updates, and retain appropriate backups. The cluster overview showed that disaster recovery backups were marked as inactive at the time of inspection; backup configuration should therefore be reviewed before the system is used for critical university records.
+Replica sets can support redundancy and availability, while read concern and write concern settings influence database consistency and durability guarantees. Sharding may support future growth, but it was not configured in this exercise.
 
-### 5. Sharding and Scalability
+The cluster overview displayed disaster recovery backups as inactive at the time of inspection. Backup and recovery arrangements should be reviewed before the system is used for critical university examination results.
 
-Sharding distributes data across multiple shards to support very large datasets and workloads. It may become useful if the university expands to many campuses, students, courses, and years of examination records. A shard key must be selected carefully to distribute data and queries effectively.
+### 6. Limitations
 
-The observed deployment is identified as a three-node replica set, not a sharded cluster. Sharding was discussed as a possible future scaling strategy; it was not configured or tested in this exercise.
-
-### 6. Evidence and Limitations
-
-The Atlas cluster overview provides evidence of the deployment name, region, and three-node replica-set type. Additional screenshots or tests should be added if further configuration details are inspected.
-
-The practical exercise did not intentionally cause a node failure, measure failover time, configure sharding, or verify backup restoration. These activities are outside the evidence collected so far. The conclusions therefore distinguish the observed Atlas configuration from the expected benefits and general behaviour of distributed database technologies.
+This exercise documented the displayed cluster configuration and successfully retrieved an existing student record. It did not experimentally verify replication, automatic failover, backup restoration, sharding, or performance under concurrent workloads. These limitations are explained in the analysis file.
 
 ### 7. Conclusion
 
-MongoDB Atlas provides a managed cloud environment for the University Student Result Management System. The observed three-node replica set provides a practical example for discussing replication and resilience. Appropriate consistency settings, backup planning, access controls, monitoring, and further failure testing would be necessary before relying on the deployment for critical examination results.
+MongoDB Atlas provides a managed cloud database environment suitable for studying distributed database concepts. The observed replica-set deployment illustrates how replication can support resilience, while suitable consistency settings, backup planning, monitoring, and further testing remain important for protecting university result data.
 
-### References
+### 8. References
 
 - MongoDB Documentation. *Replica Sets*. https://www.mongodb.com/docs/manual/replication/
 - MongoDB Documentation. *Read Concern*. https://www.mongodb.com/docs/manual/reference/read-concern/
