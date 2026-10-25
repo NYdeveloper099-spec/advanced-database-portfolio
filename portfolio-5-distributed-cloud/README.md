@@ -45,7 +45,7 @@ The cluster overview displayed disaster recovery backups as inactive at the time
 
 ### 6. Limitations
 
-This exercise documented the displayed cluster configuration and successfully retrieved an existing student record. It did not experimentally verify replication, automatic failover, backup restoration, sharding, or performance under concurrent workloads. These limitations are explained in the analysis file.
+This exercise recorded the replica-set configuration displayed by MongoDB Atlas and successfully retrieved an existing student record. It did not independently verify data replication between replica-set members. It did not experimentally verify replication, automatic failover, backup restoration, sharding, or performance under concurrent workloads. These limitations are explained in the analysis file.
 
 ### 7. Conclusion
 
