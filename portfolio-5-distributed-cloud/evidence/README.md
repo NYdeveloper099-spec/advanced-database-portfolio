@@ -11,3 +11,13 @@ This evidence supports the discussion of cloud database deployment and replicati
 ## Evidence limitations
 
 The screenshot documents the cluster configuration visible at the time of inspection. Further testing would be required to measure failover behaviour, validate recovery, or assess performance under concurrent workloads.
+
+
+
+## 2. Cloud Database Student Record Verification
+
+**Screenshot:** `student-record-verification.png`
+
+This screenshot shows a query executed in MongoDB Atlas Data Explorer using the filter `{ student_number: "STU001" }`. The query returned the existing student record for Ada Okafor from the `students` collection in the `university_results` database.
+
+This practical check confirms that the student record could be retrieved from the cloud-hosted database during the exercise. It does not independently demonstrate replication, failover, or recovery from a node failure.
