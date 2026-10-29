@@ -44,6 +44,8 @@ Each embedded registration contains a course code, course title, score, and grad
 
 **Interpretation:** MongoDB supports filtering on fields inside embedded arrays. The document matched because one registration had a score of 85, which satisfies the condition of being greater than or equal to 80.
 
+The query returns the matching student document, not only the individual registration that satisfies the score condition.
+
 ### Query 3: Department Filter
 
 **Filter:**
@@ -103,6 +105,8 @@ The choice between embedding and referencing depends on the relationships betwee
 ## 5. Comparison with the Relational Model
 
 In the earlier relational design, students, courses, registrations, and results were represented using separate tables connected by keys. MongoDB can instead store selected related information in a single document.
+
+When related registration data is embedded in a student document, MongoDB can retrieve that information without joining separate collections. In the relational model, the corresponding information is retrieved by joining the students, registrations, courses, and results tables.
 
 The relational approach provides structured relationships, constraints, and support for joins across tables. The document approach offers a flexible structure and can simplify retrieval when related information is stored together.
 
