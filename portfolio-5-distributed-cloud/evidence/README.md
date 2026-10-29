@@ -20,4 +20,4 @@ The screenshot documents the cluster configuration visible at the time of inspec
 
 This screenshot shows a query executed in MongoDB Atlas Data Explorer using the filter `{ student_number: "STU001" }`. The query returned the existing student record for Ada Okafor from the `students` collection in the `university_results` database.
 
-This practical check confirms that the student record could be retrieved from the cloud-hosted database during the exercise. It does not independently demonstrate replication, failover, or recovery from a node failure.
+This practical check demonstrates that the existing student record was accessible through MongoDB Atlas Data Explorer during the exercise. It does not independently demonstrate replication, failover, or recovery from a node failure.
