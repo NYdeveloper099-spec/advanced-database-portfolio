@@ -58,7 +58,7 @@ The test demonstrates the locking syntax. Because the browser playground uses a 
 
 In the University Student Result Management System, transactions can group related operations so that they either complete successfully or are cancelled.
 
-For example, a registration operation might need to insert a registration record and update related information. If an essential step fails, a rollback can prevent partial changes from being retained.
+In a production University Student Result Management System, a registration operation might need to insert a registration record and update related information within one transaction. If an essential step fails, a rollback can prevent partial changes from being retained.
 
 Similarly, controlled locking and appropriate isolation levels can help protect academic data when multiple users attempt to update related records.
 
