@@ -62,7 +62,7 @@ A join query was executed across the following tables:
 
 The query selected student details, course codes and titles, scores, and grades. The join used the student, course, and registration identifiers to connect related records and ordered the output by student number and course code.
 
-The successful execution was documented with a screenshot. The screenshot should be used as the source for the actual number of rows returned.
+The successful execution was documented with a screenshot. The saved screenshot provides evidence of the query output and the rows returned during execution.
 
 ## 6. Table Record Counts
 
