@@ -104,5 +104,5 @@ The final AI-use declaration is included in the project documentation.
 - [x] Portfolio 3: Transactions and Concurrency
 - [x] Portfolio 4: NoSQL and Advanced Data Models
 - [x] Portfolio 5: Distributed and Cloud Database Exercise
-- [ ] Final review and submission
+- [x] Final review and submission
 
